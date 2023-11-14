@@ -36,6 +36,8 @@ import java.util.List;
         Persona updatePersona = repo.findById(id).get();
         updatePersona.setNombre(persona.getNombre());
         updatePersona.setTelefono(persona.getTelefono());
+
+
         repo.save(updatePersona);
         return ("Editado correctamente");
 
