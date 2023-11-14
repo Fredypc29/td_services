@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.zip;
 
 @RestController
     public class Controllers {
@@ -19,7 +18,9 @@ import java.util.zip;
 
         return "CONECTADO";
     }
-
+    @GetMapping("personas")
+    public List<Persona> getPersonas(){
+        return repo.findAll();
 
 
 
