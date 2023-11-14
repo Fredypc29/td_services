@@ -28,9 +28,6 @@ import java.util.List;
     return "Grabado";
 
     }
-
-
-
     @PutMapping("editar/{id}")
     public String update(@PathVariable Long id, @RequestBody Persona persona){
     Persona updatePersona = repo.findById(id).get();
@@ -39,13 +36,8 @@ import java.util.List;
     repo.save(updatePersona);
     return ("Editado correctamente");
 
-  
-
-
-
-
     }
-
+    @PutMapping("editar/{id}")
 
 
 
