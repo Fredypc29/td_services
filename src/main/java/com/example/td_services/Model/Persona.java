@@ -17,11 +17,10 @@ public class Persona {
     @Getter
     @Setter
     private String nombre;
-    @Column(name="tel")
+    @Column
     @Getter
     @Setter
-
-    private String telefono;
+    private  String telefono;
 
 }
 
