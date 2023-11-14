@@ -37,7 +37,7 @@ import java.util.List;
     return ("Editado correctamente");
 
     }
-    @PutMapping("editar/{id}")
+    @DeleteMapping("delete/{id}")
 
 
 
