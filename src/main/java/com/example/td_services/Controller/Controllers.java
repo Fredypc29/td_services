@@ -18,30 +18,36 @@ import java.util.List;
 
         return "CONECTADO";
     }
+
     @GetMapping("personas")
-    public List<Persona> getPersonas(){
+    public List<Persona> getPersonas() {
         return repo.findAll();
     }
-    @PutMapping ("crear")
-    public String save(@RequestBody Persona persona){
-    repo.save(persona);
-    return "Grabado";
+
+    @PutMapping("crear")
+    public String save(@RequestBody Persona persona) {
+        repo.save(persona);
+        return "Grabado";
 
     }
+
     @PutMapping("editar/{id}")
-    public String update(@PathVariable Long id, @RequestBody Persona persona){
-    Persona updatePersona = repo.findById(id).get();
-    updatePersona.setNombre(persona.getNombre());
-    updatePersona.setTelefono(persona.getTelefono());
-    repo.save(updatePersona);
-    return ("Editado correctamente");
+    public String update(@PathVariable Long id, @RequestBody Persona persona) {
+        Persona updatePersona = repo.findById(id).get();
+        updatePersona.setNombre(persona.getNombre());
+        updatePersona.setTelefono(persona.getTelefono());
+        repo.save(updatePersona);
+        return ("Editado correctamente");
 
     }
+
     @DeleteMapping("delete/{id}")
-
-
-
+    public String delete(@PathVariable Long id) {
+        Persona deletePersona = repo.findById(id).get();
+        repo.delete(deletePersona);
+        return "eliminado";
     }
+}
   
 
 
