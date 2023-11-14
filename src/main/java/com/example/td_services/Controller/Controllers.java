@@ -21,15 +21,14 @@ import java.util.List;
     @GetMapping("personas")
     public List<Persona> getPersonas(){
         return repo.findAll();
+    }
     @PutMapping ("crear")
     public String save(@RequestBody Persona persona){
     repo.save(persona);
     return "Grabado";
     }
-    @PutMapping ("crear")
-    public String save(@RequestBody Persona persona){
-        repo.save(persona);
-        return "Grabado";
+
+
 
     }
 
