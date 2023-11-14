@@ -24,7 +24,8 @@ import java.util.List;
     }
     @PutMapping ("crear")
     public String save(@RequestBody Persona persona){
-
+        repo.save(persona);
+        return "Grabado";
 
     }
 
