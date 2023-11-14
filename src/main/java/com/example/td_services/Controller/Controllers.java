@@ -30,7 +30,9 @@ import java.util.List;
 
 
 
+
     }
+    @DeleteMapping("delete/{id}")
 
 
 
